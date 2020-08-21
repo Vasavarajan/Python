@@ -1,16 +1,15 @@
-myName=list(input("Enter your name"))
-crushName=list(input("Enter your crush name"))
-for mN in myName:
-    for cN in crushName:
-        if mN== cN:
-            crushName.remove(cN)
-            myName.remove(mN)
-        else:
-            pass
-print(myName)
-print(crushName)
-balMyName=len(myName)
-balCrushName=len(crushName)
+myName=input("Enter your name")
+crushName=input("Enter your crush name")
+mn_copy=myName
+cn_copy=crushName
+for i in myName:
+    cn_copy=cn_copy.replace(i,'',1)
+for i in crushName:
+    mn_copy=mn_copy.replace(i,'',1)
+# print(mn_copy) balance characters
+# print(cn_copy) balance characters
+balMyName=len(mn_copy)
+balCrushName=len(cn_copy)
 total=balMyName+balCrushName
 flames=['Friend','Love','Affection','Marriage','Enemy','Sister']
 while len(flames)>1:
@@ -22,5 +21,3 @@ while len(flames)>1:
     else:
         flames=flames[:len(flames)-1]
 print("FLAMES :" ,flames[0])
-
-
